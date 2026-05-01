@@ -30,7 +30,7 @@ export default function Home() {
   const [selectedItem, setSelectedItem] = useState(null);
   const lastScrollY = useRef(0);
 
-  // ✅ FIX: Safe window usage
+  // ✅ Safe window scroll
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -44,40 +44,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', controlNavbar);
   }, []);
 
-  // ✅ FIX: Safe window usage
-  // ✅ FIX: Safe IntersectionObserver
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!("IntersectionObserver" in window)) return;
-
-    const sectionTabMap = {
-      home: 'home',
-      about: 'about us',
-      'why-choose-us': 'why us',
-      services: 'services',
-      startups: 'startups',
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          // ✅ FIX: TypeScript ko batana ke 'id' is map mein mojood hai
-          if (id in sectionTabMap) {
-            setActiveTab(sectionTabMap[id as keyof typeof sectionTabMap]);
-          }
-        }
-      });
-    }, { threshold: 0.3 });
-
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-  // ✅ FIX: Safe document usage
+  // ✅ Safe document usage
   useEffect(() => {
     if (typeof document !== "undefined") {
       document.body.style.overflow = selectedItem ? 'hidden' : '';
@@ -90,7 +57,7 @@ export default function Home() {
     };
   }, [selectedItem]);
 
-  // ✅ FIX: Safe IntersectionObserver
+  // ✅ SINGLE clean IntersectionObserver (no duplicate)
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (!("IntersectionObserver" in window)) return;
@@ -107,7 +74,7 @@ export default function Home() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          if (id in sectionTabMap) {
+          if (sectionTabMap[id]) {
             setActiveTab(sectionTabMap[id]);
           }
         }
@@ -115,7 +82,7 @@ export default function Home() {
     }, { threshold: 0.3 });
 
     SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
+      const el = document?.getElementById(id);
       if (el) observer.observe(el);
     });
 
@@ -125,7 +92,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#020202] text-white">
 
-      {/* Example Modal Fix */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedItem && (
           <motion.div
@@ -136,30 +103,33 @@ export default function Home() {
               className="bg-[#0d0d0d] p-8 rounded-2xl max-w-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <h2>{selectedItem.title}</h2>
+              <h2>{selectedItem?.title}</h2>
 
-              {/* ✅ FIX: stable key */}
-              {selectedItem.details.split('\n\n').map((para, i) => (
-                <p key={`${selectedItem.id}-${i}`}>
-                  {para}
-                </p>
-              ))}
+              {/* ✅ Safe rendering (no crash) */}
+              {selectedItem?.details
+                ?.split('\n\n')
+                .map((para, i) => (
+                  <p key={`${selectedItem?.id || "item"}-${i}`}>
+                    {para}
+                  </p>
+                ))}
 
-              <button onClick={() => setSelectedItem(null)}>Close</button>
+              <button onClick={() => setSelectedItem(null)}>
+                Close
+              </button>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Example External Link Fix */}
-      <a
+      {/* Example link */}
+      <Link
         href="https://www.facebook.com"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Explore page"
       >
         Visit
-      </a>
+      </Link>
 
     </main>
   );
