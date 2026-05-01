@@ -45,17 +45,38 @@ export default function Home() {
   }, []);
 
   // ✅ FIX: Safe window usage
+  // ✅ FIX: Safe IntersectionObserver
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (!("IntersectionObserver" in window)) return;
 
-    const closeMenu = () => {
-      if (menuOpen) setMenuOpen(false);
+    const sectionTabMap = {
+      home: 'home',
+      about: 'about us',
+      'why-choose-us': 'why us',
+      services: 'services',
+      startups: 'startups',
     };
 
-    window.addEventListener('scroll', closeMenu, { passive: true });
-    return () => window.removeEventListener('scroll', closeMenu);
-  }, [menuOpen]);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          // ✅ FIX: TypeScript ko batana ke 'id' is map mein mojood hai
+          if (id in sectionTabMap) {
+            setActiveTab(sectionTabMap[id as keyof typeof sectionTabMap]);
+          }
+        }
+      });
+    }, { threshold: 0.3 });
 
+    SECTION_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   // ✅ FIX: Safe document usage
   useEffect(() => {
     if (typeof document !== "undefined") {
