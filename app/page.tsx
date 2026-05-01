@@ -180,21 +180,33 @@ export default function Home() {
   // IntersectionObserver for active nav tab
   useEffect(() => {
     const sectionTabMap = {
-      home: 'home', about: 'about us',
-      'why-choose-us': 'why us', services: 'services', startups: 'startups',
+      home: 'home', 
+      about: 'about us',
+      'why-choose-us': 'why us', 
+      services: 'services', 
+      startups: 'startups',
     };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveTab(sectionTabMap[entry.target.id] ?? 'home');
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            // ✅ FIX: Checking if ID exists in our map to satisfy TypeScript
+            if (id in sectionTabMap) {
+              setActiveTab(sectionTabMap[id as keyof typeof sectionTabMap]);
+            }
+          }
         });
       },
       { threshold: 0.3 }
     );
+
     SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
+
     return () => observer.disconnect();
   }, []);
 
