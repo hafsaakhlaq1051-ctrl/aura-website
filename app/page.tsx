@@ -343,7 +343,7 @@ export default function Home() {
           <div className="space-y-10">
             <p className="text-base md:text-xl font-normal text-gray-200 leading-relaxed tracking-wide text-justify">
               Aura Group of Companies is a dynamic and innovative business network committed to empowering businesses,
-              education, and creative industries through modern digital solutions.
+              education, and creative industries through modern digital solutions. Our diverse ecosystem specializes in providing cutting-edge IT services, creative digital art, and strategic branding solutions.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] text-gray-500">
               <div className="flex flex-col gap-1.5"><span className="text-purple-500 font-black text-base tracking-tighter uppercase">Syed Aura</span>Digital Scaling</div>
