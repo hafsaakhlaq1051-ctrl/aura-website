@@ -494,99 +494,75 @@ export default function Home() {
 
       {/* ── Footer ── */}
 <footer className="bg-black border-t border-white/5 pt-20 pb-10">
-<div className="max-w-7xl mx-auto px-6 md:px-8">
-{/* Top Grid */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-10 mb-20">
+  <div className="max-w-7xl mx-auto px-6 md:px-8">
+    {/* Top Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-10 mb-20">
 
-  {/* Brand */}
-  <div>
-    <img src="/Logo.png" alt="Aura Group Logo" className="h-12 mb-6 opacity-90" />
-    <p className="text-gray-500 text-sm leading-relaxed mb-6">
-      Building brands, empowering education, and scaling digital businesses with innovation and precision.
-    </p>
+      {/* Brand & Socials */}
+      <div>
+        <img src="/Logo.png" alt="Aura Group Logo" className="h-12 mb-6 opacity-90" />
+        <p className="text-gray-500 text-sm leading-relaxed mb-6">
+          Building brands, empowering education, and scaling digital businesses with innovation and precision.
+        </p>
 
-    {/* Socials */}
-    <div className="flex gap-3">
-      <a href="https://www.facebook.com/share/1EeuDi4LKY/" target="_blank" rel="noopener noreferrer"
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#1877F2] transition-all">
-        FB
-      </a>
-      <a href="https://www.instagram.com/aura.group.of.companies" target="_blank" rel="noopener noreferrer"
-        className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#E4405F] transition-all">
-        IG
-      </a>
+        {/* Icons Fixed: Removed text and added SVGs */}
+        <div className="flex gap-4">
+          <a href="https://www.facebook.com/share/1EeuDi4LKY/" target="_blank" rel="noopener noreferrer"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/aura.group.of.companies" target="_blank" rel="noopener noreferrer"
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:bg-[#E4405F] hover:border-[#E4405F] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Navigation - Same as before */}
+      <div>
+        <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Navigation</h4>
+        <ul className="space-y-4 text-gray-500 text-xs uppercase tracking-widest">
+          <li><a href="#home" className="hover:text-purple-500 transition-colors">Home</a></li>
+          <li><a href="#about" className="hover:text-purple-500 transition-colors">About</a></li>
+          <li><a href="#services" className="hover:text-purple-500 transition-colors">Services</a></li>
+          <li><a href="#startups" className="hover:text-purple-500 transition-colors">Ecosystem</a></li>
+        </ul>
+      </div>
+
+      {/* Services - Same as before */}
+      <div>
+        <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Services</h4>
+        <ul className="space-y-4 text-gray-500 text-xs uppercase tracking-widest">
+          <li><a href="/services/digital-marketing" className="hover:text-purple-500">Digital Marketing</a></li>
+          <li><a href="/services/branding-design" className="hover:text-purple-500">Branding</a></li>
+          <li><a href="/services/ecommerce-management" className="hover:text-purple-500">E-commerce</a></li>
+          <li><a href="/services/ai-automation" className="hover:text-purple-500">AI Automation</a></li>
+        </ul>
+      </div>
+
+      {/* Contact - Same as before */}
+      <div>
+        <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Contact</h4>
+        <div className="space-y-4 text-gray-500 text-xs">
+          <p>📍 Sargodha, Punjab, Pakistan</p>
+          <p>📞 +92 309 7819011</p>
+          <p>✉️ aura.group.ofcompanies.official@gmail.com</p>
+        </div>
+        <a href="https://wa.me/923097819011" target="_blank" rel="noopener noreferrer"
+          className="inline-block mt-6 bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-all">
+          WhatsApp Us →
+        </a>
+      </div>
+
+    </div>
+
+    {/* Bottom Bar */}
+    <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-[10px] uppercase tracking-[0.3em]">
+      <p>© 2026 Aura Group</p>
+      <p className="opacity-50">Innovation · Services · Excellence</p>
     </div>
   </div>
-
-  {/* Navigation */}
-  <div>
-    <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Navigation</h4>
-    <ul className="space-y-4 text-gray-500 text-xs uppercase tracking-widest">
-      <li><a href="#home" className="hover:text-purple-500 transition-colors">Home</a></li>
-      <li><a href="#about" className="hover:text-purple-500 transition-colors">About</a></li>
-      <li><a href="#services" className="hover:text-purple-500 transition-colors">Services</a></li>
-      <li><a href="#startups" className="hover:text-purple-500 transition-colors">Ecosystem</a></li>
-    </ul>
-  </div>
-
-  {/* Services */}
-  <div>
-    <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Services</h4>
-    <ul className="space-y-4 text-gray-500 text-xs uppercase tracking-widest">
-      <li><a href="/services/digital-marketing" className="hover:text-purple-500">Digital Marketing</a></li>
-      <li><a href="/services/branding-design" className="hover:text-purple-500">Branding</a></li>
-      <li><a href="/services/ecommerce-management" className="hover:text-purple-500">E-commerce</a></li>
-      <li><a href="/services/ai-automation" className="hover:text-purple-500">AI Automation</a></li>
-    </ul>
-  </div>
-
-  {/* Contact */}
-  <div>
-    <h4 className="text-white text-[11px] font-black uppercase mb-8 tracking-widest">Contact</h4>
-    <div className="space-y-4 text-gray-500 text-xs">
-      <p>📍 Sargodha, Punjab, Pakistan</p>
-      <p>📞 +92 309 7819011</p>
-      <p>✉️ aura.group.ofcompanies.official@gmail.com</p>
-    </div>
-
-    {/* CTA */}
-    <a href="https://wa.me/923097819011" target="_blank" rel="noopener noreferrer"
-      className="inline-block mt-6 bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-all">
-      WhatsApp Us →
-    </a>
-  </div>
-
-</div>
-
-{/* Bottom Bar */}
-<div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-[10px] uppercase tracking-[0.3em]">
-  <p>© 2026 Aura Group</p>
-  <p className="opacity-50">Innovation · Services · Excellence</p>
-</div>
-  </div>
-      </footer>
-      {/* Social Media Icons Section */}
-<div className="flex gap-6 items-center justify-center py-6 bg-black">
-  {/* Facebook */}
-  <a 
-    href="https://facebook.com/your-page" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="text-white hover:text-[#1877F2] transition-all duration-300 transform hover:scale-110"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-  </a>
-
-  {/* Instagram */}
-  <a 
-    href="https://instagram.com/your-profile" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="text-white hover:text-[#E4405F] transition-all duration-300 transform hover:scale-110"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-  </a>
-</div>
+</footer>
     </main>
   );
 }
