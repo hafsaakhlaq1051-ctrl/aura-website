@@ -1,9 +1,9 @@
 "use client";
-
+import { notFound } from "next/navigation";
 import { useParams, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 // ── Service Data ─────────────────────────────────────────────────────────────
 // ✅ FIX: "Why Choose Us" entries removed — they don't belong in serviceData.
@@ -159,7 +159,7 @@ const serviceData = {
     bg: "/ecommerce.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20E-commerce%20Management%20services.",
-    overview: `E-commerce is one of the most powerful ways to build a passive income stream — but only if it's managed with the right strategy, systems, and expertise. Most people fail because they try to figure it out alone.\n\nAura's e-commerce team has built and managed stores generating consistent monthly revenue across different e-commerce platforms. We handle everything: product research, supplier sourcing, store setup, listing optimization, customer service, and scaling — so you can own a profitable store without running it yourself.\n\nWhether you're starting from zero or looking to scale an existing store, our hands-free management model is designed to maximize profitability while minimizing your time investment.`,
+    overview: `E-commerce is one of the most powerful ways to build a passive income stream — but only if it's managed with the right strategy, systems, and expertise. Most people fail because they try to figure it out alone.\n\nAura's e-commerce team has built and managed stores generating consistent monthly revenue across TikTok Shop, Shopify, eBay, and Amazon. We handle everything: product research, supplier sourcing, store setup, listing optimization, customer service, and scaling — so you can own a profitable store without running it yourself.\n\nWhether you're starting from zero or looking to scale an existing store, our hands-free management model is designed to maximize profitability while minimizing your time investment.`,
     features: [
       {
         icon: "🛒",
@@ -298,12 +298,12 @@ const serviceData = {
 
 // ── Animations ────────────────────────────────────────────────────────────────
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const } }
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } }
 };
@@ -314,14 +314,14 @@ export default function ServiceDetailPage() {
   const params  = useParams();
   const router  = useRouter();
 
-  // ✅ FIX: No TypeScript casting — plain JS
-  const slug    = params.slug;
-  const service = serviceData[slug];
+const slug = Array.isArray(params.slug)
+  ? params.slug[0]
+  : params.slug;
 
+const service = serviceData[slug as keyof typeof serviceData];
   // ✅ FIX: Features are hidden by default, revealed on button click
   const [showFeatures, setShowFeatures] = useState(false);
-  const featuresRef = useRef(null);
-
+const featuresRef = useRef<HTMLDivElement | null>(null);
   const handleViewFeatures = () => {
     setShowFeatures(true);
     // Small delay so state updates before scroll
@@ -359,10 +359,6 @@ export default function ServiceDetailPage() {
               className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-colors hidden sm:block">
               ← All Services
             </Link>
-            <a href={service.waLink} target="_blank" rel="noopener noreferrer"
-              className="bg-purple-600 hover:bg-purple-500 text-white px-5 md:px-7 py-2.5 rounded-full text-[9px] font-black uppercase tracking-[0.2em] transition-all shadow-lg shadow-purple-500/20">
-              Get Started
-            </a>
           </div>
         </div>
       </nav>
