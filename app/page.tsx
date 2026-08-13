@@ -227,7 +227,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#020202] text-white selection:bg-purple-500/30 font-sans scroll-smooth overflow-x-hidden">
+    <main className="min-h-screen bg-[#0a0a0d] text-white selection:bg-purple-500/30 font-sans scroll-smooth overflow-x-hidden">
 
       {/* Background Glows */}
       <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/10 blur-[150px] rounded-full -z-10 animate-pulse" />
@@ -301,23 +301,39 @@ export default function Home() {
       </nav>
 
       {/* ── Hero ── */}
-      <section id="home" className="relative flex flex-col items-center justify-center min-h-screen pt-32 pb-10 px-6 text-center overflow-hidden">
-        <motion.div initial="hidden" animate="visible" variants={fadeInVariant} className="max-w-7xl relative z-10 flex flex-col items-center text-center">
-          <span className="text-purple-500 text-[8px] md:text-[10px] font-bold uppercase tracking-[0.5em] mb-6">Sargodha's Digital Powerhouse</span>
-          <h1 className="text-4xl md:text-[120px] font-black tracking-tight leading-tight md:leading-[0.9] uppercase bg-gradient-to-b from-white via-white to-purple-500/50 bg-clip-text text-transparent">
-            Aura Group
-          </h1>
-          <div className="h-[1px] w-16 md:w-24 bg-purple-500/30 my-8 md:my-12" />
-          <div className="space-y-4 mb-10 md:mb-16">
-            <p className="text-gray-300 text-xs md:text-xl font-light tracking-wide uppercase">Innovation · Services · Excellence.</p>
-            <p className="text-purple-400 font-medium text-[10px] md:text-lg uppercase tracking-wider">Empowering Brands · IT Hub · Creative Art</p>
-          </div>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center w-full max-w-xs md:max-w-none">
-            <a href="#services" className="bg-white text-black px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all shadow-xl text-center">Explore Services</a>
-            <a href="#startups" className="bg-white text-black px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all shadow-xl text-center">Our Ecosystem</a>
-          </div>
-        </motion.div>
-      </section>
+<section id="home" className="relative z-0 flex flex-col items-center justify-center min-h-screen pt-32 pb-10 px-6 text-center overflow-hidden">
+
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover -z-10 brightness-50 pointer-events-none"
+  >
+    <source src="/hero-bg.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* Dark Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#020202] -z-10 pointer-events-none" />
+
+  <motion.div initial="hidden" animate="visible" variants={fadeInVariant} className="max-w-7xl relative z-10 flex flex-col items-center text-center">
+    <span className="text-purple-500 text-[8px] md:text-[10px] font-bold uppercase tracking-[0.5em] mb-6">Sargodha's Digital Powerhouse</span>
+    <h1 className="text-4xl md:text-[120px] font-black tracking-tight leading-tight md:leading-[0.9] uppercase bg-gradient-to-b from-white via-white to-purple-500/50 bg-clip-text text-transparent">
+      Aura Group
+    </h1>
+    <div className="h-[1px] w-16 md:w-24 bg-purple-500/30 my-8 md:my-12" />
+    <div className="space-y-4 mb-10 md:mb-16">
+      <p className="text-gray-300 text-xs md:text-xl font-light tracking-wide uppercase">Innovation · Services · Excellence.</p>
+      <p className="text-purple-400 font-medium text-[10px] md:text-lg uppercase tracking-wider">Empowering Brands · IT Hub · Creative Art</p>
+    </div>
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center w-full max-w-xs md:max-w-none">
+      <a href="#services" className="bg-white text-black px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all shadow-xl text-center">Explore Services</a>
+      <a href="#startups" className="bg-white text-black px-10 py-4 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all shadow-xl text-center">Our Ecosystem</a>
+    </div>
+  </motion.div>
+</section>
 
       {/* ── Stats Strip ── */}
       <section className="border-t border-white/5 bg-white/[0.02] backdrop-blur-sm">
@@ -338,26 +354,65 @@ export default function Home() {
       </section>
 
       {/* ── About ── */}
-      <section id="about" className="max-w-7xl mx-auto px-6 py-20 md:py-32 border-t border-white/5 relative overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
-          <div className="md:sticky md:top-24">
-            <h2 className="text-3xl md:text-7xl font-black tracking-tighter leading-tight uppercase">
-              Your Partner for <br /><span className="text-purple-500 italic font-serif">Trust & Growth</span>
-            </h2>
-          </div>
-          <div className="space-y-10">
-            <p className="text-base md:text-xl font-normal text-gray-200 leading-relaxed tracking-wide text-justify">
-              Aura Group of Companies is a dynamic and innovative business network committed to empowering businesses,
-              education, and creative industries through modern digital solutions. Our diverse ecosystem specializes in providing cutting-edge IT services, creative digital art, and strategic branding solutions.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-white/10 text-[9px] uppercase tracking-[0.3em] text-gray-500">
-              <div className="flex flex-col gap-1.5"><span className="text-purple-500 font-black text-base tracking-tighter uppercase">Syed Aura</span>Digital Scaling</div>
-              <div className="flex flex-col gap-1.5"><span className="text-purple-500 font-black text-base tracking-tighter uppercase">Aura Edu</span>Global Learning</div>
-              <div className="flex flex-col gap-1.5"><span className="text-purple-500 font-black text-base tracking-tighter uppercase">Aura Framers</span>Modern Elegance</div>
-            </div>
-          </div>
+<section id="about" className="relative max-w-7xl mx-auto px-6 py-24 md:py-36 border-t border-white/5 overflow-hidden">
+  
+  {/* 1. Background Ambient Glow (Gives depth on mobile screens) */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-purple-900/15 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+  {/* 2. Grid Lines Pattern */}
+  <div 
+    className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10"
+    style={{ 
+      backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', 
+      backgroundSize: '32px 32px' 
+    }} 
+  />
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+    
+    {/* Left Heading Column */}
+    <div className="md:sticky md:top-28">
+      <span className="text-purple-500 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.5em] mb-4 block">
+        Who We Are
+      </span>
+      <h2 className="text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] uppercase">
+        Your Partner For <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-indigo-500 italic font-serif">
+          Trust & Growth
+        </span>
+      </h2>
+    </div>
+
+    {/* Right Content Column */}
+    <div className="space-y-12">
+      <p className="text-base md:text-xl font-light text-gray-300 leading-relaxed text-justify">
+        Aura Group of Companies is a dynamic and innovative business network committed to empowering businesses, 
+        education, and creative industries through modern digital solutions. Our diverse ecosystem specializes in providing cutting-edge IT services, creative digital art, and strategic branding solutions.
+      </p>
+
+      {/* 3. Glassmorphic Divisions Badges */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 text-[9px] uppercase tracking-[0.2em]">
+        
+        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-purple-500/40 transition-all">
+          <span className="text-purple-400 font-black text-sm tracking-tight uppercase block mb-1">Syed Aura</span>
+          <span className="text-gray-400">Digital Scaling</span>
         </div>
-      </section>
+
+        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-purple-500/40 transition-all">
+          <span className="text-purple-400 font-black text-sm tracking-tight uppercase block mb-1">Aura Edu</span>
+          <span className="text-gray-400">Global Learning</span>
+        </div>
+
+        <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-purple-500/40 transition-all">
+          <span className="text-purple-400 font-black text-sm tracking-tight uppercase block mb-1">Aura Framers</span>
+          <span className="text-gray-400">Modern Elegance</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* ── Why Choose Aura ── */}
       <section id="why-choose-us" className="max-w-7xl mx-auto px-6 py-20 md:py-28 border-t border-white/5">
@@ -493,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-<footer className="bg-black border-t border-white/5 pt-20 pb-10">
+<footer className="bg-[#0a0a0d] border-t border-white/5 pt-20 pb-10">
   <div className="max-w-7xl mx-auto px-6 md:px-8">
     {/* Top Grid */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-10 mb-20">

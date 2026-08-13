@@ -18,7 +18,7 @@ const serviceData = {
     bg: "/marketing.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20Digital%20Marketing%20services.",
-    overview: `In today's digital-first world, visibility is everything. But visibility without strategy is just noise. At Syed Aura Agency, we don't just run ads — we build complete brand ecosystems that attract, convert, and retain customers at scale.\n\nOur approach is rooted in data. Before we spend a single rupee on advertising, we study your market, your competitors, and your ideal customer. We then craft a strategy that puts the right message in front of the right person at the right time — on Meta, Google, TikTok, and beyond.\n\nFrom startups launching their first product to established brands looking to scale globally, our performance marketing team has delivered measurable growth across every industry.`,
+    overview: `In today's digital-first world, visibility is everything. But visibility without strategy is just noise. At Syed Aura Agency, we don't just run ads — we build complete brand ecosystems that attract, convert, and retain customers at scale. Our approach is rooted in data. Before we spend a single rupee on advertising, we study your market, your competitors, and your ideal customer. We then craft a strategy that puts the right message in front of the right person at the right time — on Meta, Google, TikTok, and beyond. From startups launching their first product to established brands looking to scale globally, our performance marketing team has delivered measurable growth across every industry.`,
     features: [
       {
         icon: "📊",
@@ -65,7 +65,7 @@ const serviceData = {
     bg: "/branding.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20Branding%20%26%20Design%20services.",
-    overview: `Your brand is not your logo. It's the feeling someone gets when they interact with your business — the colors they see, the words they read, the trust they feel. A powerful brand doesn't just look good; it communicates who you are and why you matter.\n\nAt Aura, we approach branding with the precision of a strategist and the eye of an artist. We start with your story — your values, your audience, your ambition — and we build a visual identity that carries all of that with confidence into every touchpoint.\n\nFrom a local business establishing its first professional identity to a global startup launching into competitive markets, we've built brands that people remember, trust, and choose.`,
+    overview: `Your brand is not your logo. It's the feeling someone gets when they interact with your business — the colors they see, the words they read, the trust they feel. A powerful brand doesn't just look good; it communicates who you are and why you matter. At Aura, we approach branding with the precision of a strategist and the eye of an artist. We start with your story — your values, your audience, your ambition — and we build a visual identity that carries all of that with confidence into every touchpoint. From a local business establishing its first professional identity to a global startup launching into competitive markets, we've built brands that people remember, trust, and choose.`,
     features: [
       {
         icon: "✏️",
@@ -112,7 +112,7 @@ const serviceData = {
     bg: "/academic.jpg",
     badge: "Aura Edu",
     waLink: "https://wa.me/923056485598?text=Hi%2C%20I'm%20interested%20in%20Academic%20Support%20services.",
-    overview: `Education is the foundation of every ambition. Whether you're a student struggling with deadlines, a professional looking to upskill, or a parent seeking the right academic environment for your child — Aura Edu is built for you.\n\nWe are not a tutoring center. We are a complete academic ecosystem offering support at every stage — from school-level assignments and board exam preparation to university-level research, IELTS coaching, and career development.\n\nWith 500+ students trained and a 98% satisfaction rate, our team of expert educators and trainers delivers personalized guidance that produces real academic outcomes. We meet students where they are and take them where they want to go.`,
+    overview: `Education is the foundation of every ambition. Whether you're a student struggling with deadlines, a professional looking to upskill, or a parent seeking the right academic environment for your child — Aura Edu is built for you. We are not a tutoring center. We are a complete academic ecosystem offering support at every stage — from school-level assignments and board exam preparation to university-level research, IELTS coaching, and career development. With 500+ students trained and a 98% satisfaction rate, our team of expert educators and trainers delivers personalized guidance that produces real academic outcomes. We meet students where they are and take them where they want to go.`,
     features: [
       {
         icon: "📝",
@@ -159,7 +159,7 @@ const serviceData = {
     bg: "/ecommerce.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20E-commerce%20Management%20services.",
-    overview: `E-commerce is one of the most powerful ways to build a passive income stream — but only if it's managed with the right strategy, systems, and expertise. Most people fail because they try to figure it out alone.\n\nAura's e-commerce team has built and managed stores generating consistent monthly revenue across TikTok Shop, Shopify, eBay, and Amazon. We handle everything: product research, supplier sourcing, store setup, listing optimization, customer service, and scaling — so you can own a profitable store without running it yourself.\n\nWhether you're starting from zero or looking to scale an existing store, our hands-free management model is designed to maximize profitability while minimizing your time investment.`,
+    overview: `E-commerce is one of the most powerful ways to build a passive income stream — but only if it's managed with the right strategy, systems, and expertise. Most people fail because they try to figure it out alone. Aura's e-commerce team has built and managed stores generating consistent monthly revenue across TikTok Shop, Shopify, eBay, and Amazon. We handle everything: product research, supplier sourcing, store setup, listing optimization, customer service, and scaling — so you can own a profitable store without running it yourself. Whether you're starting from zero or looking to scale an existing store, our hands-free management model is designed to maximize profitability while minimizing your time investment.`,
     features: [
       {
         icon: "🛒",
@@ -206,7 +206,7 @@ const serviceData = {
     bg: "/it-solutions.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20IT%20Expertise%20services.",
-    overview: `Every successful digital business runs on a foundation of reliable, secure, and high-performance technology. Whether it's a fast-loading website, a secure server configuration, or a custom software solution — the technology you use either powers your growth or limits it.\n\nAura's IT team specializes in building that foundation. We develop modern web applications using Next.js and React — frameworks used by the world's leading tech companies. We configure RDP environments for remote teams, set up secure server infrastructure, and build custom digital tools that solve real business problems.\n\nWe don't just deliver code. We deliver working systems that perform under real-world conditions and scale as your business grows.`,
+    overview: `Every successful digital business runs on a foundation of reliable, secure, and high-performance technology. Whether it's a fast-loading website, a secure server configuration, or a custom software solution — the technology you use either powers your growth or limits it. Aura's IT team specializes in building that foundation. We develop modern web applications using Next.js and React — frameworks used by the world's leading tech companies. We configure RDP environments for remote teams, set up secure server infrastructure, and build custom digital tools that solve real business problems. We don't just deliver code. We deliver working systems that perform under real-world conditions and scale as your business grows.`,
     features: [
       {
         icon: "🌐",
@@ -253,7 +253,7 @@ const serviceData = {
     bg: "/web-dev.jpg",
     badge: "Syed Aura Agency",
     waLink: "https://wa.me/923097819011?text=Hi%2C%20I'm%20interested%20in%20AI%20%26%20Automation%20services.",
-    overview: `The businesses that will dominate the next decade are the ones building AI into their operations today. Not as a gimmick — but as a genuine competitive advantage that saves time, reduces costs, and scales output without scaling headcount.\n\nAt Aura, we help businesses implement practical AI solutions that deliver real results. From custom chatbots that handle customer inquiries 24/7 to YouTube automation systems that grow channels on autopilot, to intelligent workflows that eliminate repetitive manual tasks — we turn AI from a buzzword into a business asset.\n\nOur automation solutions are built for businesses of all sizes. Whether you're a solopreneur looking to reclaim your time or a growing company trying to scale without hiring, we design systems that fit your exact needs and integrate seamlessly into your existing workflow.`,
+    overview: `The businesses that will dominate the next decade are the ones building AI into their operations today. Not as a gimmick — but as a genuine competitive advantage that saves time, reduces costs, and scales output without scaling headcount. At Aura, we help businesses implement practical AI solutions that deliver real results. From custom chatbots that handle customer inquiries 24/7 to YouTube automation systems that grow channels on autopilot, to intelligent workflows that eliminate repetitive manual tasks — we turn AI from a buzzword into a business asset. Our automation solutions are built for businesses of all sizes. Whether you're a solopreneur looking to reclaim your time or a growing company trying to scale without hiring, we design systems that fit your exact needs and integrate seamlessly into your existing workflow.`,
     features: [
       {
         icon: "🤖",
